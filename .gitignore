@@ -1,0 +1,43 @@
+# ==========================================
+# Memento iOS - Git Ignore Configuration
+# ==========================================
+
+# --- macOS System Files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon\r
+._*
+.Spotlight-V100
+.Trashes
+
+# --- Xcode User Data & State ---
+xcuserdata/
+*.xcscmblueprint
+*.xcuserdatad
+*.xcuserstate
+
+# --- Build Products & DerivedData ---
+build/
+DerivedData/
+*.moved-aside
+*.xccheckout
+*.xcresult
+
+# --- Swift Package Manager ---
+.build/
+Packages/
+*.resolved
+!Package.resolved
+
+# --- Fastlane & CI Artifacts ---
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# --- Miscellaneous ---
+*.orig
+*~
+*.swp
+*.bak

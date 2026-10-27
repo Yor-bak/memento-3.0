@@ -2,17 +2,24 @@
 //  Memento_AppApp.swift
 //  Memento_App
 //
-//  Created by Sara Fernanda Crespo Galindo  on 15/10/2026.
+//  Created by Senior iOS Engineer on 15/10/2026.
 //
 
 import SwiftUI
 import SwiftData
 
+/// Punto de entrada principal para la aplicación Memento.
+/// Configura el contenedor persistente de SwiftData (`ModelContainer`) con los esquemas de:
+/// - `UserProfile`: Preferencias de seguridad, estado de onboarding y contador de reflexiones.
+/// - `DailyEntry`: Registros diarios de bienestar holístico y respuestas introspectivas.
+/// - `StarNode`: Cuerpos celestes del grafo cósmico (mini estrellas, constelaciones medianas y lunas).
 @main
 struct Memento_AppApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            UserProfile.self,
+            DailyEntry.self,
+            StarNode.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +32,7 @@ struct Memento_AppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
         .modelContainer(sharedModelContainer)
     }
